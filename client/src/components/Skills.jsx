@@ -29,7 +29,7 @@ const Skills = () => {
             whileHover={{ scale: 1.1 }}
             className="bg-blue-50 p-6 rounded-lg flex flex-col items-center shadow-md"
           >
-            <img src={skill.image} alt={skill.name} className="w-80 h-40 object-contain" />
+            <img src={skill.image} alt={skill.name} className="w-80 cursor-pointer h-40 object-contain" />
             <p className="mt-4 text-blue-800 font-semibold">{skill.name}</p>
           </motion.div>
         ))}

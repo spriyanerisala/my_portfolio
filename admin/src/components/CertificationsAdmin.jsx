@@ -17,8 +17,8 @@ const CertificationsAdmin = () => {
 
   const fetchCerts = async () => {
     try {
-      const { data } = await axios.get(`${API_URL}/api/certifications/get-certifications`);
-      setCerts(data.certification || []); // match backend key
+      const { data } = await axios.get(`${API_URL}/api/certs/get-certs`);
+      setCerts(data.certifications || []);
     } catch (err) {
       console.log(err);
     }
@@ -44,10 +44,11 @@ const CertificationsAdmin = () => {
     if (formData.image) payload.append("image", formData.image);
 
     try {
-      if (editId) {
-        await axios.put(`${API_URL}/api/certifications/update-certification/${editId}`, payload);
+      if (editId) { 
+        await axios.put(`${API_URL}/api/certs/update-cert/${editId}`, payload);
       } else {
-        await axios.post(`${API_URL}/api/certifications/create-certification`, payload);
+        await axios.post(`${API_URL}/api/certs/create-cert`, payload); 
+       
       }
       setFormData({ name: "", description: "", image: null });
       setEditId(null);
@@ -68,7 +69,7 @@ const CertificationsAdmin = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${API_URL}/api/certifications/delete-certification/${id}`);
+      await axios.delete(`${API_URL}/api/certs/delete-cert/${id}`);
       fetchCerts();
     } catch (err) {
       console.log(err);

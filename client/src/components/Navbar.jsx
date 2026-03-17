@@ -5,8 +5,14 @@
 
  const Navbar = () => {
    const [isOpen, setIsOpen] = useState(false);
-
-   const links = ["Home", "Skills", "Projects", "Certifications","Achievements"];
+const links = [
+  { name: "Home", id: "home" },
+  { name: "Skills", id: "skills" },
+  { name: "Projects", id: "projects" },
+  { name: "Certifications", id: "certifications" },
+  { name: "Achievements", id: "achievements" },
+  { name: "Contact Me", id: "contact" }
+];
 
    const handleScroll = (section) => {
     const element = document.getElementById(section.toLowerCase());
@@ -29,14 +35,13 @@
               key={idx}
                whileHover={{ scale: 1.1, color: "#1E40AF" }} 
                className="cursor-pointer"
-               onClick={() => handleScroll(link)}
+               onClick={() => handleScroll(link.id)}
              >
-               {link}
+               {link.name}
              </motion.li>
            ))}
          </ul>
 
-         {/* Mobile Hamburger */}
          <div className="md:hidden">
            <button onClick={() => setIsOpen(!isOpen)} className="text-blue-800 focus:outline-none">
             {isOpen ? (
