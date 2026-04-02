@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const Navbar = ({ toggleDarkMode, isDarkMode, setActivePage }) => {
-  const links = ["Skills", "Projects", "Certifications", "Contacts"];
+  const links = ["Skills", "Projects","Achievements", "Contacts"];
 
   return (
     <nav className={`flex justify-between items-center px-8 py-4 shadow-md ${isDarkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"}`}>

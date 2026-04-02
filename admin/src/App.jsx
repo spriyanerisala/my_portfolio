@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import SkillsAdmin from "./components/SkillsAdmin";
 import ProjectsAdmin from "./components/ProjectsAdmin";
-import CertificationsAdmin from './components/CertificationsAdmin';
+// import CertificationsAdmin from './components/CertificationsAdmin';
 import ContactsAdmin from "./components/ContactsAdmin";
-
+import AchievementsAdmin from "./components/AchievementsAdmin";
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [activePage, setActivePage] = useState("Skills");
@@ -18,8 +18,8 @@ function App() {
         return <SkillsAdmin />;
       case "Projects":
         return <ProjectsAdmin />;
-      case "Certifications":
-        return <CertificationsAdmin />;
+      case "Achievements":
+        return <AchievementsAdmin />;
       case "Contacts":
         return <ContactsAdmin />;
       default:
