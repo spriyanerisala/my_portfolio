@@ -1,10 +1,18 @@
 /* eslint-disable no-unused-vars */
 
-import React from "react";
+import React,{useState,useEffect}from "react";
 import { motion } from "framer-motion";
-
 const Navbar = ({ toggleDarkMode, isDarkMode, setActivePage }) => {
   const links = ["Skills", "Projects","Achievements", "Contacts"];
+  const [darkMode,setDarkMode] = useState(false);
+
+  useEffect(()=>{
+    if(darkMode){
+      document.documentElement.classList.add('dark');
+    }else{
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode])
 
   return (
     <nav className={`flex justify-between items-center px-8 py-4 shadow-md ${isDarkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"}`}>
